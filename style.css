@@ -1,0 +1,269 @@
+/* Tema Gelap Elegan: Dark gray background, light text, blue accents */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c; /* Dark gray, not too dark */
+    color: #f0f0f0; /* Light text */
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #1a1a1a; /* Slightly darker for header */
+    padding: 1rem;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff; /* Blue accent */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Hamburger menu for mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #f0f0f0;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c2c2c, #404040); /* Subtle gradient */
+    animation: fadeIn 2s ease-in; /* Fade-in animation on load */
+    padding: 2rem;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Stack vertically on mobile */
+    text-align: center;
+}
+
+.hero-img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.hero-img:hover {
+    transform: scale(1.05); /* Hover effect */
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.explore-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px); /* Interactive hover */
+}
+
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in; /* Fade-in for sections */
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #007bff;
+}
+
+.achievements-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.achievement {
+    text-align: center;
+    margin: 1rem;
+    flex: 1 1 200px; /* Flexible for mobile */
+}
+
+.achievement img {
+    width: 50px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.achievement img:hover {
+    transform: rotate(10deg); /* Fun hover */
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+}
+
+.gallery img:hover {
+    opacity: 0.8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #404040;
+    color: #f0f0f0;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Interactive submit */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1a1a1a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        padding: 1rem 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Show when active */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger */
+    }
+
+    .hero-content {
+        gap: 1rem;
+    }
+
+    .hero-img {
+        width: 200px; /* Smaller image */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Smaller font */
+    }
+
+    .explore-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 2rem 1rem; /* Less padding */
+    }
+
+    .achievements-list {
+        flex-direction: column; /* Stack achievements */
+        align-items: center;
+    }
+
+    .gallery {
+        flex-direction: column; /* Stack gallery images */
+        align-items: center;
+    }
+
+    .gallery img {
+        width: 250px; /* Smaller images */
+    }
+
+    form {
+        max-width: 100%; /* Full width */
+        padding: 0 1rem;
+    }
+}
+
